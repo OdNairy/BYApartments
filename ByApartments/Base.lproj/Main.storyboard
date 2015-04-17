@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2513" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9MR-u1-Bls">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9MR-u1-Bls">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -28,33 +28,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CzY-Ju-ojq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-TQ-v06" userLabel="Gradient View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="32.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-lu-lUh" userLabel="Address">
-                                                    <rect key="frame" x="8" y="8" width="304" height="20.5"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbq-vi-QoX" userLabel="Price">
-                                                    <rect key="frame" x="275" y="171" width="37" height="20.5"/>
+                                                    <rect key="frame" x="275" y="171" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="С" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-Qg-PxL">
-                                                    <rect key="frame" x="8" y="171" width="9.5" height="20.5"/>
+                                                    <rect key="frame" x="8" y="170" width="10" height="21"/>
                                                     <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ts-30-hyC">
-                                                    <rect key="frame" x="25" y="171" width="9" height="20.5"/>
+                                                    <rect key="frame" x="26" y="170" width="9" height="21"/>
                                                     <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,6 +88,7 @@
                                             <outlet property="ownerLabel" destination="SmG-Qg-PxL" id="l2P-yI-slL"/>
                                             <outlet property="priceLabel" destination="Xbq-vi-QoX" id="e9b-4Z-IQo"/>
                                             <outlet property="roomNumberLabel" destination="1Ts-30-hyC" id="wGF-al-XeN"/>
+                                            <segue destination="uG8-eH-7tF" kind="push" identifier="WEB" id="Xqn-HX-4mn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -115,6 +116,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="364"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="khg-Ns-S2K">
+            <objects>
+                <viewController id="uG8-eH-7tF" customClass="BYAWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JTi-ar-mfG"/>
+                        <viewControllerLayoutGuide type="bottom" id="FBk-Vo-mUq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dcd-cc-t1g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBF-Fn-K92">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dBF-Fn-K92" secondAttribute="trailing" id="FvQ-0R-7al"/>
+                            <constraint firstItem="dBF-Fn-K92" firstAttribute="leading" secondItem="Dcd-cc-t1g" secondAttribute="leading" id="PhQ-dc-j53"/>
+                            <constraint firstItem="dBF-Fn-K92" firstAttribute="top" secondItem="JTi-ar-mfG" secondAttribute="bottom" id="Zb8-UN-6bQ"/>
+                            <constraint firstItem="FBk-Vo-mUq" firstAttribute="top" secondItem="dBF-Fn-K92" secondAttribute="bottom" id="nbT-CY-lom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cqe-FO-MBv"/>
+                    <connections>
+                        <outlet property="webView" destination="dBF-Fn-K92" id="fZv-vn-9EO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2zb-AD-CUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O50-oz-8QA">

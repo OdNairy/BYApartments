@@ -13,6 +13,7 @@
 
 #import "BYAApartmentsListViewController.h"
 #import "BYAApartmentCell.h"
+#import "BYAWebViewController.h"
 
 @interface BYAApartmentsListViewController ()<UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
@@ -76,6 +77,13 @@
                                            cell.backgroundImageView.image = image;
                                        }];
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"WEB"]) {
+        BYAWebViewController* webViewController = segue.destinationViewController;
+        webViewController.apartment = self.apartments[self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 @end

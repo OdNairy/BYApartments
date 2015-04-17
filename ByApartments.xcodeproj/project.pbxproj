@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25379E95BB6F68EF6E227BC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3016FAD1F186391B3A384E97 /* libPods.a */; };
+		FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */; };
 		FE851EE81AD121C300BFB09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE61AD121C300BFB09A /* Main.storyboard */; };
 		FE851EEA1AD121C300BFB09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE91AD121C300BFB09A /* Images.xcassets */; };
 		FE851EED1AD121C300BFB09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE851EEB1AD121C300BFB09A /* LaunchScreen.xib */; };
@@ -22,6 +23,8 @@
 		04CD670973547C1F94590720 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "ByApartments/Supporting Files/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3016FAD1F186391B3A384E97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA63A4B5B9CA48AF3C7D3A01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "ByApartments/Supporting Files/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAWebViewController.h; sourceTree = "<group>"; };
+		FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAWebViewController.m; sourceTree = "<group>"; };
 		FE851ED91AD121C300BFB09A /* ByApartments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByApartments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE851EE71AD121C300BFB09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE851EE91AD121C300BFB09A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				FE851F101AD136A700BFB09A /* ViewController.m */,
 				FE851F161AD1392300BFB09A /* BYAApartmentsListViewController.h */,
 				FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */,
+				FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */,
+				FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */,
 			);
 			name = Controller;
 			path = Classes/Controller;
@@ -263,6 +268,7 @@
 			files = (
 				FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */,
 				FE851F111AD136A700BFB09A /* ViewController.m in Sources */,
+				FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */,
 				FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */,
 				FE851F071AD1281900BFB09A /* AppDelegate.m in Sources */,
 				FE851F081AD1281900BFB09A /* main.m in Sources */,
