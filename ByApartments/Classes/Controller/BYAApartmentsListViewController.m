@@ -16,6 +16,7 @@
 #import "BYAWebViewController.h"
 #import "BYASidebarController.h"
 #import "Masonry.h"
+#import "BYAApartment.h"
 
 @interface BYAApartmentsListViewController ()<UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
@@ -112,12 +113,12 @@ const int optionsScreenPadding = 60;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BYAApartmentCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    PFObject* apartment = self.apartments[indexPath.row];
+    BYAApartment* apartment = self.apartments[indexPath.row];
 
-    cell.addressLabel.text = apartment[@"userAddress"];
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@ $",apartment[@"priceUSD"]];
+    cell.addressLabel.text = apartment.userAddress;
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ $",apartment.priceUSD.stringValue];
     cell.ownerLabel.text = [apartment[@"owner"] boolValue] ? @"С" : @"А";
-    [cell.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:apartment[@"photoUrl"]]
+    [cell.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:apartment.photoUrl]
                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                            cell.backgroundImageView.image = image;
                                        }];
