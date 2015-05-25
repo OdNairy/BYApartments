@@ -10,7 +10,7 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation BYAApartment
-@dynamic onlinerID, location, apartmentAddedAt, priceUSD, photoUrl, userAddress;
+@dynamic onlinerID, location, apartmentAddedAt, priceUSD, photoUrl, userAddress, url, owner;
 
 + (void)load {
     [self registerSubclass];
@@ -20,6 +20,17 @@
     return @"Apartment";
 }
 
+-(NSURL *)url{
+    return [NSURL URLWithString:self[@"url"]];
+}
+
+-(NSString *)ownerString{
+    return self.owner ? NSLocalizedString(@"Owner", @"") : NSLocalizedString(@"Agent", @"");
+}
+
+-(NSString*)priceString{
+    return [NSString stringWithFormat:@"%@ $",self.priceUSD.stringValue];
+}
 
 
 @end

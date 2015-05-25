@@ -13,8 +13,12 @@
 @property (nonatomic, assign) NSInteger onlinerID;
 @property (nonatomic, strong) NSDate* apartmentAddedAt;
 @property (nonatomic, strong) PFGeoPoint* location;
-@property (nonatomic, strong) NSNumber* priceUSD;
 @property (nonatomic, strong) NSString* userAddress;
 @property (nonatomic, strong) NSString* photoUrl;
+@property (nonatomic, strong) NSNumber* priceUSD;
+@property (nonatomic, strong) NSURL* url;
+@property (nonatomic, assign) BOOL owner;
 
+-(NSString*)ownerString;
+-(NSString*)priceString;
 @end

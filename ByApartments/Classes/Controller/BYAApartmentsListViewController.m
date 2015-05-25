@@ -87,8 +87,6 @@ const int optionsScreenPadding = 60;
 
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:.3 animations:^{
-//        [self.sidebarController.view layoutIfNeeded];
-//        [self.view.superview layoutIfNeeded];
         self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, self.sidebarController.view.bounds.size.width, 0);
         self.optionsScreenPresented = YES;
     }];
@@ -116,8 +114,8 @@ const int optionsScreenPadding = 60;
     BYAApartment* apartment = self.apartments[indexPath.row];
 
     cell.addressLabel.text = apartment.userAddress;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@ $",apartment.priceUSD.stringValue];
-    cell.ownerLabel.text = [apartment[@"owner"] boolValue] ? @"С" : @"А";
+    cell.priceLabel.text = [apartment priceString];
+    cell.ownerLabel.text = [apartment ownerString];
     [cell.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:apartment.photoUrl]
                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                            cell.backgroundImageView.image = image;
