@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9MR-u1-Bls">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9MR-u1-Bls">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="p7C-wM-9Kk">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="drh-3T-Pg2" customClass="BYAApartmentCell">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -100,14 +100,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p7C-wM-9Kk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="7n5-Z0-HSg"/>
+                            <constraint firstItem="p7C-wM-9Kk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7n5-Z0-HSg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7C-wM-9Kk" secondAttribute="bottom" id="H97-nq-FCv"/>
                             <constraint firstItem="p7C-wM-9Kk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="e9l-Nn-UIY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p7C-wM-9Kk" secondAttribute="trailing" constant="-16" id="lPH-Kg-tmm"/>
+                            <constraint firstAttribute="trailing" secondItem="p7C-wM-9Kk" secondAttribute="trailing" id="lPH-Kg-tmm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Apartments" id="2GD-gT-aJn">
-                        <barButtonItem key="leftBarButtonItem" image="options" id="cIn-KD-2dI"/>
+                        <barButtonItem key="leftBarButtonItem" image="options" id="cIn-KD-2dI">
+                            <connections>
+                                <action selector="showOptionsButtonDidTapped:" destination="BYZ-38-t0r" id="VWT-Qx-adM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="p7C-wM-9Kk" id="E4k-4I-4CO"/>
@@ -116,6 +120,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="364"/>
+        </scene>
+        <!--Sidebar Controller-->
+        <scene sceneID="7NT-pb-3aI">
+            <objects>
+                <viewController storyboardIdentifier="Sidebar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VUR-ua-rX6" customClass="BYASidebarController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hw0-9z-wtk"/>
+                        <viewControllerLayoutGuide type="bottom" id="nIx-1d-Adp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oGc-vU-PUq">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="94j-r0-vU9">
+                                <rect key="frame" x="16" y="93" width="268" height="29"/>
+                                <segments>
+                                    <segment title="Собственник"/>
+                                    <segment title="Агент"/>
+                                    <segment title="Не важно"/>
+                                </segments>
+                                <color key="tintColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToG-jw-p19">
+                                <rect key="frame" x="101" y="526" width="98" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Применить">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.91789426615363678" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="94j-r0-vU9" secondAttribute="trailing" constant="16" id="0mH-o0-Idb"/>
+                            <constraint firstItem="94j-r0-vU9" firstAttribute="leading" secondItem="oGc-vU-PUq" secondAttribute="leading" constant="16" id="FO7-SB-2EL"/>
+                            <constraint firstItem="94j-r0-vU9" firstAttribute="top" secondItem="Hw0-9z-wtk" secondAttribute="bottom" constant="29" id="LIT-91-fyB"/>
+                            <constraint firstAttribute="centerX" secondItem="ToG-jw-p19" secondAttribute="centerX" id="VPN-zt-nig"/>
+                            <constraint firstItem="nIx-1d-Adp" firstAttribute="top" secondItem="ToG-jw-p19" secondAttribute="bottom" constant="8" id="k7Q-n8-cZS"/>
+                            <constraint firstAttribute="centerX" secondItem="94j-r0-vU9" secondAttribute="centerX" id="la4-EQ-CsT"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="568"/>
+                    <connections>
+                        <outlet property="ownerSegmentControl" destination="94j-r0-vU9" id="fxR-Ub-shf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fab-Hh-TWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="1002"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="khg-Ns-S2K">

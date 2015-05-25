@@ -14,12 +14,17 @@
 #import "BYAApartmentsListViewController.h"
 #import "BYAApartmentCell.h"
 #import "BYAWebViewController.h"
+#import "BYASidebarController.h"
+#import "Masonry.h"
 
 @interface BYAApartmentsListViewController ()<UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
 @property (nonatomic, strong) UIRefreshControl* refreshControl;
 
 @property (nonatomic, strong) NSArray* apartments;
+
+@property (nonatomic, assign) BOOL optionsScreenPresented;
+@property (nonatomic, strong) BYASidebarController* sidebarController;
 @end
 
 @implementation BYAApartmentsListViewController
@@ -41,7 +46,16 @@
     });
 }
 
-#pragma mark - Update UI
+#pragma mark - User Actions
+
+-(IBAction)showOptionsButtonDidTapped:(id)showOptionsButton{
+    if (!self.optionsScreenPresented) {
+        [self presentOptionsScreen:YES];
+    }else {
+        [self hideOptionsScreen:YES];
+    }
+}
+
 
 -(void)refreshControlDidPulled{
     [self updateApartments].finally(^(){
@@ -58,6 +72,37 @@
         self.apartments = responseDictionary[@"results"];
         [self.tableView reloadData];
     });
+}
+
+#pragma mark - Options Screen
+const int optionsScreenPadding = 60;
+-(void)presentOptionsScreen:(BOOL)animated{
+    self.sidebarController = [self.storyboard instantiateViewControllerWithIdentifier:@"Sidebar"];
+    self.sidebarController.view.frame = CGRectMake(0, 0, self.sidebarController.view.bounds.size.width - optionsScreenPadding, self.sidebarController.view.bounds.size.height);
+    [self addChildViewController:self.sidebarController];
+
+    self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, -self.sidebarController.view.bounds.size.width, 0);
+    [self.view addSubview:self.sidebarController.view];
+
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:.3 animations:^{
+//        [self.sidebarController.view layoutIfNeeded];
+//        [self.view.superview layoutIfNeeded];
+        self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, self.sidebarController.view.bounds.size.width, 0);
+        self.optionsScreenPresented = YES;
+    }];
+}
+
+-(void)hideOptionsScreen:(BOOL)animated{
+    [UIView animateWithDuration:.3 animations:^{
+        self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, -self.sidebarController.view.bounds.size.width, 0);
+    } completion:^(BOOL finished) {
+        [self.sidebarController.view removeFromSuperview];
+        [self.sidebarController removeFromParentViewController];
+        self.sidebarController = nil;
+
+        self.optionsScreenPresented = NO;
+    }];
 }
 
 #pragma mark - UITableViewDataSource Protocol

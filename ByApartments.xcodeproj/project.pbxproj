@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25379E95BB6F68EF6E227BC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3016FAD1F186391B3A384E97 /* libPods.a */; };
+		D53385080C6E2F4C0E9DFCD1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A070EEF9DACCAD5CBD91EC /* libPods.a */; };
+		FE20B1FC1AE828D500F43959 /* BYASidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE20B1FB1AE828D500F43959 /* BYASidebarController.m */; };
 		FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */; };
 		FE851EE81AD121C300BFB09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE61AD121C300BFB09A /* Main.storyboard */; };
 		FE851EEA1AD121C300BFB09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE91AD121C300BFB09A /* Images.xcassets */; };
@@ -17,12 +18,16 @@
 		FE851F111AD136A700BFB09A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F101AD136A700BFB09A /* ViewController.m */; };
 		FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F141AD1389900BFB09A /* BYAApartmentCell.m */; };
 		FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */; };
+		FEDB77171B0132D200CF7ACC /* BYAPriceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */; };
+		FEDB771A1B01354100CF7ACC /* BYAFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB77191B01354100CF7ACC /* BYAFilterModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04CD670973547C1F94590720 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "ByApartments/Supporting Files/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		3016FAD1F186391B3A384E97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7A070EEF9DACCAD5CBD91EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA63A4B5B9CA48AF3C7D3A01 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "ByApartments/Supporting Files/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FE20B1FA1AE828D500F43959 /* BYASidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYASidebarController.h; sourceTree = "<group>"; };
+		FE20B1FB1AE828D500F43959 /* BYASidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYASidebarController.m; sourceTree = "<group>"; };
 		FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAWebViewController.h; sourceTree = "<group>"; };
 		FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAWebViewController.m; sourceTree = "<group>"; };
 		FE851ED91AD121C300BFB09A /* ByApartments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByApartments.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +44,10 @@
 		FE851F141AD1389900BFB09A /* BYAApartmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentCell.m; sourceTree = "<group>"; };
 		FE851F161AD1392300BFB09A /* BYAApartmentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentsListViewController.h; sourceTree = "<group>"; };
 		FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentsListViewController.m; sourceTree = "<group>"; };
+		FEDB77151B0132D200CF7ACC /* BYAPriceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYAPriceFormatter.h; path = Utility/BYAPriceFormatter.h; sourceTree = "<group>"; };
+		FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYAPriceFormatter.m; path = Utility/BYAPriceFormatter.m; sourceTree = "<group>"; };
+		FEDB77181B01354100CF7ACC /* BYAFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAFilterModel.h; sourceTree = "<group>"; };
+		FEDB77191B01354100CF7ACC /* BYAFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAFilterModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25379E95BB6F68EF6E227BC2 /* libPods.a in Frameworks */,
+				D53385080C6E2F4C0E9DFCD1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +74,7 @@
 		6F172EF0DEFE25043F4D4219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3016FAD1F186391B3A384E97 /* libPods.a */,
+				B7A070EEF9DACCAD5CBD91EC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,6 +100,7 @@
 		FE851EDB1AD121C300BFB09A /* ByApartments */ = {
 			isa = PBXGroup;
 			children = (
+				FEDB77141B0132AE00CF7ACC /* Utility */,
 				FE851F121AD1380B00BFB09A /* Categories */,
 				FE851F0E1AD1336900BFB09A /* Controller */,
 				FE851F0D1AD1336700BFB09A /* View */,
@@ -117,6 +127,8 @@
 		FE851F0C1AD1336000BFB09A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEDB77181B01354100CF7ACC /* BYAFilterModel.h */,
+				FEDB77191B01354100CF7ACC /* BYAFilterModel.m */,
 			);
 			name = Model;
 			path = Classes/Model;
@@ -141,6 +153,8 @@
 				FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */,
 				FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */,
 				FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */,
+				FE20B1FA1AE828D500F43959 /* BYASidebarController.h */,
+				FE20B1FB1AE828D500F43959 /* BYASidebarController.m */,
 			);
 			name = Controller;
 			path = Classes/Controller;
@@ -152,6 +166,15 @@
 			);
 			name = Categories;
 			path = Classes/Categories;
+			sourceTree = "<group>";
+		};
+		FEDB77141B0132AE00CF7ACC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FEDB77151B0132D200CF7ACC /* BYAPriceFormatter.h */,
+				FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */,
+				FEDB771A1B01354100CF7ACC /* BYAFilterModel.m in Sources */,
+				FEDB77171B0132D200CF7ACC /* BYAPriceFormatter.m in Sources */,
+				FE20B1FC1AE828D500F43959 /* BYASidebarController.m in Sources */,
 				FE851F111AD136A700BFB09A /* ViewController.m in Sources */,
 				FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */,
 				FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */,
