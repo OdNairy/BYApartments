@@ -8,7 +8,7 @@ inhibit_all_warnings!
 
 pod 'Parse'
 pod 'ParseUI'
-pod 'PromiseKit'
+pod 'PromiseKit', '~> 1.5'
 pod 'Parse+PromiseKit', '~> 0.9.2'
 pod 'SDWebImage'
 pod 'MMDrawerController', '~> 0.6.0'
