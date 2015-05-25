@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BYAApartmentsModel.h"
 
 
 typedef NS_ENUM(NSUInteger, BYAFilterOwnerType) {
@@ -16,7 +17,7 @@ typedef NS_ENUM(NSUInteger, BYAFilterOwnerType) {
     BYAFilterOwnerTypeDefault = BYAFilterUnknown
 };
 
-@interface BYAFilterModel : NSObject
+@interface BYAFilterModel : BYAApartmentsModel
 @property (nonatomic, assign) BYAFilterOwnerType owner;
 
 @property (nonatomic, strong) NSNumber* minPrice;
