@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FXBlurView.h>
 
 @interface BYAApartmentCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UIImageView* backgroundImageView;
+@property (weak, nonatomic) IBOutlet UIView *blurView;
 @property (nonatomic, weak) IBOutlet UILabel* addressLabel;
 @property (nonatomic, weak) IBOutlet UIView* gradientView;
 @property (nonatomic, weak) IBOutlet UILabel* priceLabel;

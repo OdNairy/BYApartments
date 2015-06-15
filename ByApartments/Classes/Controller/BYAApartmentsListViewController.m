@@ -118,10 +118,17 @@ const int optionsScreenPadding = 60;
     cell.ownerLabel.text = [apartment ownerString];
     [cell.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:apartment.photoUrl]
                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                           if (cell.backgroundImageView.image != image) {
                                            cell.backgroundImageView.image = image;
+//                                           [cell.blurView updateAsynchronously:YES completion:NULL];
+                                           
+//                                           cell.blurView.underlyingView = cell.backgroundImageView;
+//                                           }
+//                                           cell.bluringImageView.image = image;
                                        }];
     return cell;
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"WEB"]) {
