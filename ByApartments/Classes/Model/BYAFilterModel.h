@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Roman Gardukevich. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "BYAApartmentsModel.h"
 
 
