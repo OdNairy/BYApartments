@@ -15,7 +15,6 @@
 		FE851EED1AD121C300BFB09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE851EEB1AD121C300BFB09A /* LaunchScreen.xib */; };
 		FE851F071AD1281900BFB09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F031AD1281900BFB09A /* AppDelegate.m */; };
 		FE851F081AD1281900BFB09A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F041AD1281900BFB09A /* main.m */; };
-		FE851F111AD136A700BFB09A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F101AD136A700BFB09A /* ViewController.m */; };
 		FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F141AD1389900BFB09A /* BYAApartmentCell.m */; };
 		FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */; };
 		FE9414521B13B461000E3E6A /* BYAApartmentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9414511B13B461000E3E6A /* BYAApartmentsModel.m */; };
@@ -40,8 +39,6 @@
 		FE851F031AD1281900BFB09A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		FE851F041AD1281900BFB09A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		FE851F0A1AD1283F00BFB09A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
-		FE851F0F1AD136A700BFB09A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FE851F101AD136A700BFB09A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FE851F131AD1389900BFB09A /* BYAApartmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentCell.h; sourceTree = "<group>"; };
 		FE851F141AD1389900BFB09A /* BYAApartmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentCell.m; sourceTree = "<group>"; };
 		FE851F161AD1392300BFB09A /* BYAApartmentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentsListViewController.h; sourceTree = "<group>"; };
@@ -158,8 +155,6 @@
 		FE851F0E1AD1336900BFB09A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE851F0F1AD136A700BFB09A /* ViewController.h */,
-				FE851F101AD136A700BFB09A /* ViewController.m */,
 				FE851F161AD1392300BFB09A /* BYAApartmentsListViewController.h */,
 				FE851F171AD1392300BFB09A /* BYAApartmentsListViewController.m */,
 				FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */,
@@ -218,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BYA;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Roman Gardukevich";
 				TargetAttributes = {
 					FE851ED81AD121C300BFB09A = {
@@ -307,7 +302,6 @@
 				FE9414521B13B461000E3E6A /* BYAApartmentsModel.m in Sources */,
 				FE20B1FC1AE828D500F43959 /* BYASidebarController.m in Sources */,
 				FE9414561B13BEC2000E3E6A /* BYAApartment.m in Sources */,
-				FE851F111AD136A700BFB09A /* ViewController.m in Sources */,
 				FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */,
 				FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */,
 				FE851F071AD1281900BFB09A /* AppDelegate.m in Sources */,
@@ -357,6 +351,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -421,9 +416,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/ByApartments/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.intellectsoft.appid2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -434,9 +431,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/ByApartments/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.intellectsoft.appid2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
