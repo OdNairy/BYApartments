@@ -10,6 +10,7 @@
 		D53385080C6E2F4C0E9DFCD1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A070EEF9DACCAD5CBD91EC /* libPods.a */; };
 		FE20B1FC1AE828D500F43959 /* BYASidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE20B1FB1AE828D500F43959 /* BYASidebarController.m */; };
 		FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */; };
+		FE69C31E1B2EE9AA00185C92 /* BYAGeobox.m in Sources */ = {isa = PBXBuildFile; fileRef = FE69C31D1B2EE9AA00185C92 /* BYAGeobox.m */; };
 		FE851EE81AD121C300BFB09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE61AD121C300BFB09A /* Main.storyboard */; };
 		FE851EEA1AD121C300BFB09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE851EE91AD121C300BFB09A /* Images.xcassets */; };
 		FE851EED1AD121C300BFB09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE851EEB1AD121C300BFB09A /* LaunchScreen.xib */; };
@@ -31,6 +32,8 @@
 		FE20B1FB1AE828D500F43959 /* BYASidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYASidebarController.m; sourceTree = "<group>"; };
 		FE3C8C8C1AE144EB001D6BB7 /* BYAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAWebViewController.h; sourceTree = "<group>"; };
 		FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAWebViewController.m; sourceTree = "<group>"; };
+		FE69C31C1B2EE9AA00185C92 /* BYAGeobox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAGeobox.h; sourceTree = "<group>"; };
+		FE69C31D1B2EE9AA00185C92 /* BYAGeobox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAGeobox.m; sourceTree = "<group>"; };
 		FE851ED91AD121C300BFB09A /* ByApartments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByApartments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE851EE71AD121C300BFB09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE851EE91AD121C300BFB09A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				FE9414511B13B461000E3E6A /* BYAApartmentsModel.m */,
 				FE9414541B13BEC2000E3E6A /* BYAApartment.h */,
 				FE9414551B13BEC2000E3E6A /* BYAApartment.m */,
+				FE69C31C1B2EE9AA00185C92 /* BYAGeobox.h */,
+				FE69C31D1B2EE9AA00185C92 /* BYAGeobox.m */,
 			);
 			name = Model;
 			path = Classes/Model;
@@ -297,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */,
+				FE69C31E1B2EE9AA00185C92 /* BYAGeobox.m in Sources */,
 				FEDB771A1B01354100CF7ACC /* BYAFilterModel.m in Sources */,
 				FEDB77171B0132D200CF7ACC /* BYAPriceFormatter.m in Sources */,
 				FE9414521B13B461000E3E6A /* BYAApartmentsModel.m in Sources */,
