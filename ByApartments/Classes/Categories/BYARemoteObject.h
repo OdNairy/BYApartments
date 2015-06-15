@@ -6,17 +6,18 @@
 //  Copyright (c) 2015 Roman Gardukevich. All rights reserved.
 //
 
+#import "PromiseKit.h"
 @import Foundation;
 
 @protocol BYARemoteObject <NSObject>
 @optional
-+(nullable NSArray *)allObjects;
-+(nullable id)objectForId:(nonnull NSString*)objectId;
+-(nonnull PMKPromise *)allObjects;
+-(nonnull PMKPromise *)objectForId:(nonnull NSString*)objectId;
 @end
 
 @class BYAGeobox;
 @protocol BYAApartmentObject <NSObject, BYARemoteObject>
 
-+(nonnull NSArray*)allObjectsInsideGeobox:(nullable BYAGeobox*)geobox;
+-(nonnull PMKPromise *)allObjectsInsideGeobox:(nullable BYAGeobox*)geobox;
 
 @end

@@ -14,6 +14,15 @@
 
 @implementation BYAApartmentsModel
 
++(instancetype)sharedModel{
+    static dispatch_once_t onceToken;
+    static BYAApartmentsModel* model;
+    dispatch_once(&onceToken, ^{
+        model = [[BYAApartmentsModel alloc] init];
+    });
+    return model;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -23,16 +32,19 @@
     return self;
 }
 
-+(nullable NSArray *)allObjects{
+-(nonnull PMKPromise *)allObjects{
     return [self allObjectsInsideGeobox:nil];
 }
 
-+(nonnull NSArray *)allObjectsInsideGeobox:(nullable BYAGeobox *)geobox{
-    NSDictionary* functionCallResult = [PFCloud callFunction:@"apartmentsByGeobox" withParameters:[geobox serializeObject]];
-    return functionCallResult[@"results"];
+-(nonnull PMKPromise *)allObjectsInsideGeobox:(nullable BYAGeobox *)geobox{
+    return [PFCloud promiseFunction:@"apartmentsByGeobox"
+                     withParameters:[geobox serializeObject]]
+    .then(^(NSDictionary* functionCallResult){
+        return functionCallResult[@"results"];
+    });
 }
 
-+(nullable id)objectForId:(nonnull NSString *)objectId{
+-(nonnull PMKPromise *)objectForId:(nonnull NSString *)objectId{
     return nil;
 }
 
