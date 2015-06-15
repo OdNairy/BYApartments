@@ -10,6 +10,13 @@
 
 @protocol BYARemoteObject <NSObject>
 @optional
-+(NSArray*)allObject;
-+(id)objectForId:(NSString*)objectId;
++(nullable NSArray *)allObjects;
++(nullable id)objectForId:(nonnull NSString*)objectId;
+@end
+
+@class BYAGeobox;
+@protocol BYAApartmentObject <NSObject, BYARemoteObject>
+
++(nonnull NSArray*)allObjectsInsideGeobox:(nullable BYAGeobox*)geobox;
+
 @end

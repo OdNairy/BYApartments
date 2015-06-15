@@ -51,6 +51,7 @@
 		FE9414531B13B4F6000E3E6A /* BYARemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYARemoteObject.h; sourceTree = "<group>"; };
 		FE9414541B13BEC2000E3E6A /* BYAApartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartment.h; sourceTree = "<group>"; };
 		FE9414551B13BEC2000E3E6A /* BYAApartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartment.m; sourceTree = "<group>"; };
+		FEAAC51A1B2EF55C008A86F4 /* BYASerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYASerialization.h; sourceTree = "<group>"; };
 		FEDB77151B0132D200CF7ACC /* BYAPriceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYAPriceFormatter.h; path = Utility/BYAPriceFormatter.h; sourceTree = "<group>"; };
 		FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYAPriceFormatter.m; path = Utility/BYAPriceFormatter.m; sourceTree = "<group>"; };
 		FEDB77181B01354100CF7ACC /* BYAFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAFilterModel.h; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9414531B13B4F6000E3E6A /* BYARemoteObject.h */,
+				FEAAC51A1B2EF55C008A86F4 /* BYASerialization.h */,
 			);
 			name = Categories;
 			path = Classes/Categories;

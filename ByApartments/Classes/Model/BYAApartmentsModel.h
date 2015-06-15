@@ -9,7 +9,8 @@
 @import Foundation;
 #import "BYARemoteObject.h"
 
-@interface BYAApartmentsModel : NSObject<BYARemoteObject>
+@interface BYAApartmentsModel : NSObject<BYAApartmentObject>
 
+-(instancetype)init NS_DESIGNATED_INITIALIZER;
 
 @end

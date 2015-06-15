@@ -15,26 +15,44 @@ NSString* const kBYAGeoboxSouthPointKey =   @"kBYAGeoboxSouthPointKey";
 
 @implementation BYAGeobox
 
+- (instancetype)init
+{
+    return [self initWithDictionary:nil];
+}
+
 -(instancetype)initWithDictionary:(NSDictionary*)geoboxDictionary{
     self = [super init];
     if (self) {
-        NSNumber* northPoint = geoboxDictionary[kBYAGeoboxNorthPointKey];
-        NSNumber* westPoint = geoboxDictionary[kBYAGeoboxWestPointKey];
-        
-        CLLocationCoordinate2D northWestPoint;
-        northWestPoint.latitude = northPoint.doubleValue;
-        northWestPoint.longitude = westPoint.doubleValue;
-        self.northWestPoint = northWestPoint;
-        
-        NSNumber* southPoint = geoboxDictionary[kBYAGeoboxSouthPointKey];
-        NSNumber* eastPoint = geoboxDictionary[kBYAGeoboxEastPointKey];
-        
-        CLLocationCoordinate2D southEastPoint;
-        southEastPoint.latitude = southPoint.doubleValue;
-        southEastPoint.longitude = eastPoint.doubleValue;
-        self.southEastPoint = southEastPoint;
+        if (geoboxDictionary) {
+            NSNumber* northPoint = geoboxDictionary[kBYAGeoboxNorthPointKey];
+            NSNumber* westPoint = geoboxDictionary[kBYAGeoboxWestPointKey];
+            
+            CLLocationCoordinate2D northWestPoint;
+            northWestPoint.latitude = northPoint.doubleValue;
+            northWestPoint.longitude = westPoint.doubleValue;
+            self.northWestPoint = northWestPoint;
+            
+            NSNumber* southPoint = geoboxDictionary[kBYAGeoboxSouthPointKey];
+            NSNumber* eastPoint = geoboxDictionary[kBYAGeoboxEastPointKey];
+            
+            CLLocationCoordinate2D southEastPoint;
+            southEastPoint.latitude = southPoint.doubleValue;
+            southEastPoint.longitude = eastPoint.doubleValue;
+            self.southEastPoint = southEastPoint;
+        }
         
     }
     return self;
 }
+
+#pragma mark - BYASerializableObject
+-(id __nullable)serializeObject{
+    NSMutableDictionary* serializedObject = [NSMutableDictionary dictionary];
+    serializedObject[kBYAGeoboxNorthPointKey] = @(self.northWestPoint.latitude);
+    serializedObject[kBYAGeoboxWestPointKey] = @(self.northWestPoint.longitude);
+    serializedObject[kBYAGeoboxSouthPointKey] = @(self.southEastPoint.latitude);
+    serializedObject[kBYAGeoboxEastPointKey] = @(self.southEastPoint.longitude);
+    return serializedObject;
+}
+
 @end

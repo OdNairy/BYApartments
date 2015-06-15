@@ -8,14 +8,15 @@
 
 @import Foundation;
 @import CoreLocation;
+#import "BYASerialization.h"
 
-@interface BYAGeobox : NSObject
+@interface BYAGeobox : NSObject<BYASerializableObject>
 @property (nonatomic, assign) CLLocationCoordinate2D northWestPoint;
 @property (nonatomic, assign) CLLocationCoordinate2D southEastPoint;
 
 
 // format: {s:value, w:value, n:value, e:value}
--(instancetype)initWithDictionary:(NSDictionary*)geoboxDictionary;
+-(instancetype)initWithDictionary:(NSDictionary*)geoboxDictionary NS_DESIGNATED_INITIALIZER;
 @end
 
 

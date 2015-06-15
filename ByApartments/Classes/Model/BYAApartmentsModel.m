@@ -7,14 +7,35 @@
 //
 
 #import "BYAApartmentsModel.h"
+#import "BYAGeobox.h"
+#import "PFCloud.h"
+#import "Parse+PromiseKit.h"
+
 
 @implementation BYAApartmentsModel
 
-+(NSArray*)allObject{
-    return nil;
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
 }
-+(id)objectForId:(NSString*)objectId{
+
++(nullable NSArray *)allObjects{
+    return [self allObjectsInsideGeobox:nil];
+}
+
++(nonnull NSArray *)allObjectsInsideGeobox:(nullable BYAGeobox *)geobox{
+    NSDictionary* functionCallResult = [PFCloud callFunction:@"apartmentsByGeobox" withParameters:[geobox serializeObject]];
+    return functionCallResult[@"results"];
+}
+
++(nullable id)objectForId:(nonnull NSString *)objectId{
     return nil;
 }
 
 @end
+
+
