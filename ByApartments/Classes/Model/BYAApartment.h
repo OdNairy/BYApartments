@@ -8,17 +8,29 @@
 
 @import Foundation;
 #import <Parse/Parse.h>
+#import <PromiseKit.h>
 
 @interface BYAApartment : PFObject<PFSubclassing>
 @property (nonatomic, assign) NSInteger onlinerID;
-@property (nonatomic, strong) NSDate* apartmentAddedAt;
-@property (nonatomic, strong) PFGeoPoint* location;
-@property (nonatomic, strong) NSString* userAddress;
-@property (nonatomic, strong) NSString* photoUrl;
-@property (nonatomic, strong) NSNumber* priceUSD;
-@property (nonatomic, strong) NSURL* url;
+@property (nonatomic, strong, nonnull) NSDate* apartmentAddedAt;
+@property (nonatomic, strong, nonnull) PFGeoPoint* location;
+@property (nonatomic, strong, nonnull) NSString* userAddress;
+@property (nonatomic, strong, nonnull) NSString* photoUrl;
+@property (nonatomic, strong, nonnull) NSNumber* priceUSD;
+@property (nonatomic, strong, nonnull) NSURL* url;
 @property (nonatomic, assign) BOOL owner;
 
--(NSString*)ownerString;
--(NSString*)priceString;
+@property (nonatomic, strong, nullable) NSArray<NSURL*>* photos;
+@property (nonatomic, strong, nullable) NSString* dealDescription;
+@property (nonatomic, strong, nullable) NSArray* phoneNumbers;
+@property (nonatomic, strong, nullable) NSString* phoneComment;
+@property (nonatomic, strong, nullable) NSString* authorName;
+
+
+@property (nonatomic, assign, getter=isLoadingCurrentDetails) BOOL loadingCurrentDetails;
+
+-(nullable NSString*)ownerString;
+-(nullable NSString*)priceString;
+
+-(nullable PMKPromise*)loadDetails;
 @end
