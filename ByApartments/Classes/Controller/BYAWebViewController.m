@@ -12,6 +12,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.apartment[@"url"]]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:self.apartment.url]];
+    [self.apartment loadDetails];
 }
 @end

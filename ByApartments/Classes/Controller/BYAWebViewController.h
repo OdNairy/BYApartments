@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "BYAApartment.h"
 
 @interface BYAWebViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIWebView* webView;
-@property (nonatomic, strong) PFObject* apartment;
+@property (nonatomic, strong) BYAApartment* apartment;
 @end
