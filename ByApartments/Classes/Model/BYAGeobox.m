@@ -8,10 +8,10 @@
 
 #import "BYAGeobox.h"
 
-NSString* const kBYAGeoboxNorthPointKey =   @"kBYAGeoboxNorthPointKey";
-NSString* const kBYAGeoboxEastPointKey =    @"kBYAGeoboxEastPointKey";
-NSString* const kBYAGeoboxWestPointKey =    @"kBYAGeoboxWestPointKey";
-NSString* const kBYAGeoboxSouthPointKey =   @"kBYAGeoboxSouthPointKey";
+NSString* const kBYAGeoboxNorthPointKey =   @"n";
+NSString* const kBYAGeoboxEastPointKey =    @"e";
+NSString* const kBYAGeoboxWestPointKey =    @"w";
+NSString* const kBYAGeoboxSouthPointKey =   @"s";
 
 @implementation BYAGeobox
 
