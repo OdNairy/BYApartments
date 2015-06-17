@@ -13,7 +13,7 @@
 
 #import "BYAApartmentsListViewController.h"
 #import "BYAApartmentCell.h"
-#import "BYAWebViewController.h"
+#import "BYAApartmentController.h"
 #import "BYASidebarController.h"
 #import "Masonry.h"
 #import "BYAApartment.h"
@@ -137,9 +137,9 @@ const int optionsScreenPadding = 60;
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"WEB"]) {
-        BYAWebViewController* webViewController = segue.destinationViewController;
-        webViewController.apartment = self.apartments[self.tableView.indexPathForSelectedRow.row];
+    if ([segue.identifier isEqualToString:@"Apartment"]) {
+        BYAApartmentController* apartmentController = segue.destinationViewController;
+        apartmentController.apartment = self.apartments[self.tableView.indexPathForSelectedRow.row];
     }
 }
 

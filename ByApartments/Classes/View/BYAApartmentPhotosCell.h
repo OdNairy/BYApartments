@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BYAApartmentPhotosCell : UITableViewCell
-
+@property (nonatomic, strong) IBOutlet UIImageView* placeholderImageView;
 @end

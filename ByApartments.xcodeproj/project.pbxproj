@@ -22,6 +22,12 @@
 		FE9414561B13BEC2000E3E6A /* BYAApartment.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9414551B13BEC2000E3E6A /* BYAApartment.m */; };
 		FEDB77171B0132D200CF7ACC /* BYAPriceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */; };
 		FEDB771A1B01354100CF7ACC /* BYAFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB77191B01354100CF7ACC /* BYAFilterModel.m */; };
+		FEFB150A1B317CD7000F27BF /* BYAApartmentPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB15091B317CD7000F27BF /* BYAApartmentPhotosCell.m */; };
+		FEFB150D1B3188CB000F27BF /* BYAApartmentPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB150C1B3188CB000F27BF /* BYAApartmentPriceCell.m */; };
+		FEFB15101B318911000F27BF /* BYAApartmentOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB150F1B318911000F27BF /* BYAApartmentOptionsCell.m */; };
+		FEFB15131B318941000F27BF /* BYAApartmentDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB15121B318941000F27BF /* BYAApartmentDescriptionCell.m */; };
+		FEFB15161B31896B000F27BF /* BYAApartmentAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB15151B31896B000F27BF /* BYAApartmentAddressCell.m */; };
+		FEFB15191B318D0E000F27BF /* BYAApartmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB15181B318D0E000F27BF /* BYAApartmentController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,18 @@
 		FEDB77161B0132D200CF7ACC /* BYAPriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYAPriceFormatter.m; path = Utility/BYAPriceFormatter.m; sourceTree = "<group>"; };
 		FEDB77181B01354100CF7ACC /* BYAFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAFilterModel.h; sourceTree = "<group>"; };
 		FEDB77191B01354100CF7ACC /* BYAFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAFilterModel.m; sourceTree = "<group>"; };
+		FEFB15081B317CD7000F27BF /* BYAApartmentPhotosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentPhotosCell.h; sourceTree = "<group>"; };
+		FEFB15091B317CD7000F27BF /* BYAApartmentPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentPhotosCell.m; sourceTree = "<group>"; };
+		FEFB150B1B3188CB000F27BF /* BYAApartmentPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentPriceCell.h; sourceTree = "<group>"; };
+		FEFB150C1B3188CB000F27BF /* BYAApartmentPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentPriceCell.m; sourceTree = "<group>"; };
+		FEFB150E1B318911000F27BF /* BYAApartmentOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentOptionsCell.h; sourceTree = "<group>"; };
+		FEFB150F1B318911000F27BF /* BYAApartmentOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentOptionsCell.m; sourceTree = "<group>"; };
+		FEFB15111B318941000F27BF /* BYAApartmentDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentDescriptionCell.h; sourceTree = "<group>"; };
+		FEFB15121B318941000F27BF /* BYAApartmentDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentDescriptionCell.m; sourceTree = "<group>"; };
+		FEFB15141B31896B000F27BF /* BYAApartmentAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentAddressCell.h; sourceTree = "<group>"; };
+		FEFB15151B31896B000F27BF /* BYAApartmentAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentAddressCell.m; sourceTree = "<group>"; };
+		FEFB15171B318D0E000F27BF /* BYAApartmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAApartmentController.h; sourceTree = "<group>"; };
+		FEFB15181B318D0E000F27BF /* BYAApartmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAApartmentController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +171,16 @@
 			children = (
 				FE851F131AD1389900BFB09A /* BYAApartmentCell.h */,
 				FE851F141AD1389900BFB09A /* BYAApartmentCell.m */,
+				FEFB15081B317CD7000F27BF /* BYAApartmentPhotosCell.h */,
+				FEFB15091B317CD7000F27BF /* BYAApartmentPhotosCell.m */,
+				FEFB150B1B3188CB000F27BF /* BYAApartmentPriceCell.h */,
+				FEFB150C1B3188CB000F27BF /* BYAApartmentPriceCell.m */,
+				FEFB150E1B318911000F27BF /* BYAApartmentOptionsCell.h */,
+				FEFB150F1B318911000F27BF /* BYAApartmentOptionsCell.m */,
+				FEFB15111B318941000F27BF /* BYAApartmentDescriptionCell.h */,
+				FEFB15121B318941000F27BF /* BYAApartmentDescriptionCell.m */,
+				FEFB15141B31896B000F27BF /* BYAApartmentAddressCell.h */,
+				FEFB15151B31896B000F27BF /* BYAApartmentAddressCell.m */,
 			);
 			name = View;
 			path = Classes/View;
@@ -167,6 +195,8 @@
 				FE3C8C8D1AE144EB001D6BB7 /* BYAWebViewController.m */,
 				FE20B1FA1AE828D500F43959 /* BYASidebarController.h */,
 				FE20B1FB1AE828D500F43959 /* BYASidebarController.m */,
+				FEFB15171B318D0E000F27BF /* BYAApartmentController.h */,
+				FEFB15181B318D0E000F27BF /* BYAApartmentController.m */,
 			);
 			name = Controller;
 			path = Classes/Controller;
@@ -305,15 +335,21 @@
 			files = (
 				FE851F181AD1392300BFB09A /* BYAApartmentsListViewController.m in Sources */,
 				FE69C31E1B2EE9AA00185C92 /* BYAGeobox.m in Sources */,
+				FEFB15161B31896B000F27BF /* BYAApartmentAddressCell.m in Sources */,
 				FEDB771A1B01354100CF7ACC /* BYAFilterModel.m in Sources */,
 				FEDB77171B0132D200CF7ACC /* BYAPriceFormatter.m in Sources */,
+				FEFB150A1B317CD7000F27BF /* BYAApartmentPhotosCell.m in Sources */,
 				FE9414521B13B461000E3E6A /* BYAApartmentsModel.m in Sources */,
+				FEFB15101B318911000F27BF /* BYAApartmentOptionsCell.m in Sources */,
 				FE20B1FC1AE828D500F43959 /* BYASidebarController.m in Sources */,
 				FE9414561B13BEC2000E3E6A /* BYAApartment.m in Sources */,
 				FE3C8C8E1AE144EB001D6BB7 /* BYAWebViewController.m in Sources */,
 				FE851F151AD1389900BFB09A /* BYAApartmentCell.m in Sources */,
+				FEFB150D1B3188CB000F27BF /* BYAApartmentPriceCell.m in Sources */,
 				FE851F071AD1281900BFB09A /* AppDelegate.m in Sources */,
 				FE851F081AD1281900BFB09A /* main.m in Sources */,
+				FEFB15131B318941000F27BF /* BYAApartmentDescriptionCell.m in Sources */,
+				FEFB15191B318D0E000F27BF /* BYAApartmentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

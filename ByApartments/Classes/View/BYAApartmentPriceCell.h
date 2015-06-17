@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BYAApartmentPriceCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *primaryPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondaryPriceLabel;
 
 @end
