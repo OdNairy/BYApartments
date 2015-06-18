@@ -28,6 +28,7 @@
 
 
 @property (nonatomic, assign, getter=isLoadingCurrentDetails) BOOL loadingCurrentDetails;
+@property (nonatomic, assign, getter=isDetailsAreLoaded) BOOL detailsAreLoaded;
 
 -(nullable NSString*)ownerString;
 -(nullable NSString*)priceString;

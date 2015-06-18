@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BYAApartmentAddressCell : UITableViewCell
-
+@property (nonatomic, weak) IBOutlet UILabel* addressLabel;
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BYAApartmentPhotosCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
 @property (nonatomic, strong) IBOutlet UIImageView* placeholderImageView;
 @end

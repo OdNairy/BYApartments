@@ -18,7 +18,7 @@
 
 @implementation BYAApartment
 @dynamic onlinerID, location, apartmentAddedAt, priceUSD, photoUrl, userAddress, url, owner;
-@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment;
+@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment,detailsAreLoaded=_detailsAreLoaded;
 
 + (void)load {
     [self registerSubclass];
@@ -83,6 +83,7 @@
     [self parsePhoneNumber:detailsDocument];
     [self parsePhoneComment:detailsDocument];
     [self parseAuthorName:detailsDocument];
+    self.detailsAreLoaded = YES;
     
     return self;
 }

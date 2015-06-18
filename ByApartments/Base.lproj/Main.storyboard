@@ -157,17 +157,28 @@
                                                         <constraint firstAttribute="height" constant="200" id="p9x-bU-cJS"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hours ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xw-BJ-5rr">
+                                                    <rect key="frame" x="227" y="8" width="85" height="17"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10409628378378379" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="mPY-Rm-ihj" secondAttribute="bottom" id="H1q-El-NDi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8xw-BJ-5rr" secondAttribute="trailing" id="JKe-BO-NZ2"/>
                                                 <constraint firstAttribute="trailing" secondItem="mPY-Rm-ihj" secondAttribute="trailing" id="V5z-vQ-TeR"/>
                                                 <constraint firstItem="mPY-Rm-ihj" firstAttribute="leading" secondItem="fkn-8h-cpy" secondAttribute="leading" id="VKV-Ud-Dtw"/>
                                                 <constraint firstItem="mPY-Rm-ihj" firstAttribute="top" secondItem="fkn-8h-cpy" secondAttribute="top" id="eRW-2t-eUh"/>
+                                                <constraint firstAttribute="topMargin" secondItem="8xw-BJ-5rr" secondAttribute="top" id="qiV-F8-cmL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="dateTimeLabel" destination="8xw-BJ-5rr" id="Xfe-we-KMt"/>
                                             <outlet property="placeholderImageView" destination="mPY-Rm-ihj" id="7Uc-mg-LKZ"/>
                                         </connections>
                                     </tableViewCell>
@@ -209,31 +220,68 @@
                                             <outlet property="secondaryPriceLabel" destination="JTY-ye-0hM" id="4iY-Jz-Xd3"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressCell" id="hR1-fR-CWM" customClass="BYAApartmentAddressCell">
+                                        <rect key="frame" x="0.0" y="287" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hR1-fR-CWM" id="28v-Y4-2b5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQb-h8-Pm8">
+                                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TQb-h8-Pm8" secondAttribute="bottom" id="1OR-51-DSj"/>
+                                                <constraint firstItem="TQb-h8-Pm8" firstAttribute="top" secondItem="28v-Y4-2b5" secondAttribute="topMargin" id="H2U-QC-Vsj"/>
+                                                <constraint firstItem="TQb-h8-Pm8" firstAttribute="leading" secondItem="28v-Y4-2b5" secondAttribute="leadingMargin" id="Lpf-NU-zx8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TQb-h8-Pm8" secondAttribute="trailing" id="m69-mk-HvC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="TQb-h8-Pm8" id="VIk-lz-LsQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DescriptionCell" rowHeight="84" id="EFO-qN-k55" customClass="BYAApartmentDescriptionCell">
+                                        <rect key="frame" x="0.0" y="331" width="320" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EFO-qN-k55" id="GY9-Z3-14G">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="83.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5t-MR-qJw">
+                                                    <rect key="frame" x="16" y="28" width="288" height="28"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="J5t-MR-qJw" firstAttribute="leading" secondItem="GY9-Z3-14G" secondAttribute="leadingMargin" constant="8" id="CXf-mF-a51"/>
+                                                <constraint firstItem="J5t-MR-qJw" firstAttribute="top" secondItem="GY9-Z3-14G" secondAttribute="topMargin" constant="20" id="Iyx-ng-xE2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="J5t-MR-qJw" secondAttribute="bottom" constant="20" id="UJj-uw-hlM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="J5t-MR-qJw" secondAttribute="trailing" constant="8" id="j5E-Gl-ATb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="J5t-MR-qJw" id="Jna-Uj-cPu"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OptionsCell" rowHeight="171" id="9px-dU-sii" customClass="BYAApartmentOptionsCell">
-                                        <rect key="frame" x="0.0" y="287" width="320" height="171"/>
+                                        <rect key="frame" x="0.0" y="415" width="320" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9px-dU-sii" id="8wM-jJ-5HD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DescriptionCell" id="EFO-qN-k55" customClass="BYAApartmentDescriptionCell">
-                                        <rect key="frame" x="0.0" y="458" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EFO-qN-k55" id="GY9-Z3-14G">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressCell" id="hR1-fR-CWM" customClass="BYAApartmentAddressCell">
-                                        <rect key="frame" x="0.0" y="502" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hR1-fR-CWM" id="28v-Y4-2b5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -249,7 +297,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YfC-g1-5dv"/>
+                    <navigationItem key="navigationItem" id="YfC-g1-5dv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="rewind" id="NnK-3j-vGz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="EuU-Yh-QSl" id="U6R-Bl-g19"/>
                     </connections>

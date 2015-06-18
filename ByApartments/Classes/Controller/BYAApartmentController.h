@@ -12,9 +12,9 @@
 typedef NS_ENUM(NSInteger, BYAApartmentSection) {
     BYAApartmentSectionPhotos,
     BYAApartmentSectionPrice,
-    BYAApartmentSectionOptions,
-    BYAApartmentSectionDescription,
     BYAApartmentSectionAddress,
+    BYAApartmentSectionDescription,
+    BYAApartmentSectionOptions,
     
     BYAApartmentSectionCount
 };
