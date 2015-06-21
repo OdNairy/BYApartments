@@ -10,10 +10,18 @@
 
 @implementation BYAApartmentPhotosCell
 -(void)awakeFromNib{
-    self.dateTimeLabel.layer.shadowOpacity = .6;
-    self.dateTimeLabel.layer.shadowOffset = CGSizeZero;
-    self.dateTimeLabel.layer.shadowRadius = 5;
-    self.dateTimeLabel.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.dateTimeLabel.layer.masksToBounds = NO;
+    self.datetimeBackgroundView.layer.shadowOpacity = 0.99;
+    self.datetimeBackgroundView.layer.masksToBounds = NO;
+    self.datetimeBackgroundView.layer.shadowRadius = 3;
+    self.datetimeBackgroundView.layer.shadowOffset = CGSizeZero;
+    self.datetimeBackgroundView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.datetimeBackgroundView.layer.cornerRadius = 3;
+    
+    
+    CAShapeLayer* maskLayer = [CAShapeLayer layer];
+//    maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.datet byRoundingCorners:<#(UIRectCorner)#> cornerRadii:<#(CGSize)#>];
+//    self.datetimeBackgroundView.layer.mask
+    
 }
+
 @end

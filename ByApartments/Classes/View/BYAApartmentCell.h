@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UILabel* addressLabel;
 @property (nonatomic, weak) IBOutlet UIView* gradientView;
 @property (nonatomic, weak) IBOutlet UILabel* priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *datetimeLabel;
 
 @property (nonatomic, weak) IBOutlet UILabel* ownerLabel;
 @property (nonatomic, weak) IBOutlet UILabel* roomNumberLabel;

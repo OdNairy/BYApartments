@@ -16,7 +16,7 @@
 @property (nonatomic, strong, nonnull) PFGeoPoint* location;
 @property (nonatomic, strong, nonnull) NSString* userAddress;
 @property (nonatomic, strong, nonnull) NSString* photoUrl;
-@property (nonatomic, strong, nonnull) NSNumber* priceUSD;
+@property (nonatomic, strong, nullable) NSNumber* priceUSD;
 @property (nonatomic, strong, nonnull) NSURL* url;
 @property (nonatomic, assign) BOOL owner;
 
@@ -25,6 +25,7 @@
 @property (nonatomic, strong, nullable) NSArray* phoneNumbers;
 @property (nonatomic, strong, nullable) NSString* phoneComment;
 @property (nonatomic, strong, nullable) NSString* authorName;
+@property (nonatomic, strong, nullable) NSString* viewsCountString;
 
 
 @property (nonatomic, assign, getter=isLoadingCurrentDetails) BOOL loadingCurrentDetails;

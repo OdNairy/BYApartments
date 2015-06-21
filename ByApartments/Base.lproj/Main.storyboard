@@ -47,7 +47,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBm-Za-cwf" userLabel="Info view">
                                                     <rect key="frame" x="0.0" y="140" width="320" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbq-vi-QoX" userLabel="Price">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="760" text="350 $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbq-vi-QoX" userLabel="Price">
                                                             <rect key="frame" x="8" y="8" width="37" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
@@ -55,9 +55,15 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-lu-lUh" userLabel="Address">
-                                                            <rect key="frame" x="8" y="31" width="304" height="21"/>
+                                                            <rect key="frame" x="8" y="30" width="304" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hours ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWg-Gd-hPZ">
+                                                            <rect key="frame" x="227" y="8" width="85" height="17"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -65,12 +71,14 @@
                                                     <color key="backgroundColor" white="1" alpha="0.89651076858108103" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xbq-vi-QoX" secondAttribute="trailing" constant="10" id="8R8-BQ-aHs"/>
                                                         <constraint firstAttribute="height" constant="60" id="DyX-dK-pnB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mWg-Gd-hPZ" secondAttribute="trailing" constant="8" id="LK8-Q6-oJd"/>
                                                         <constraint firstAttribute="trailing" secondItem="Urr-lu-lUh" secondAttribute="trailing" constant="8" id="MVm-0Z-rdj"/>
                                                         <constraint firstItem="Urr-lu-lUh" firstAttribute="leading" secondItem="BBm-Za-cwf" secondAttribute="leading" constant="8" id="SPT-y0-K4f"/>
                                                         <constraint firstItem="Xbq-vi-QoX" firstAttribute="top" secondItem="BBm-Za-cwf" secondAttribute="top" constant="8" id="dVG-EO-VQ3"/>
+                                                        <constraint firstItem="mWg-Gd-hPZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xbq-vi-QoX" secondAttribute="trailing" constant="20" id="dor-Ad-OIj"/>
                                                         <constraint firstItem="Urr-lu-lUh" firstAttribute="top" secondItem="Xbq-vi-QoX" secondAttribute="bottom" constant="2" id="fhe-mE-KnV"/>
+                                                        <constraint firstItem="mWg-Gd-hPZ" firstAttribute="top" secondItem="BBm-Za-cwf" secondAttribute="top" constant="8" id="ntL-5c-C58"/>
                                                         <constraint firstItem="Xbq-vi-QoX" firstAttribute="leading" secondItem="BBm-Za-cwf" secondAttribute="leading" constant="8" id="z3E-aO-bsV"/>
                                                     </constraints>
                                                 </view>
@@ -91,6 +99,7 @@
                                             <outlet property="addressLabel" destination="Urr-lu-lUh" id="GBJ-Wi-E82"/>
                                             <outlet property="backgroundImageView" destination="CzY-Ju-ojq" id="xTH-1X-ATy"/>
                                             <outlet property="blurView" destination="BBm-Za-cwf" id="UkI-21-4gb"/>
+                                            <outlet property="datetimeLabel" destination="mWg-Gd-hPZ" id="Fbm-tq-KYn"/>
                                             <outlet property="priceLabel" destination="Xbq-vi-QoX" id="e9b-4Z-IQo"/>
                                             <segue destination="fIZ-xn-KcX" kind="push" identifier="Apartment" id="qjQ-Xv-jSZ"/>
                                         </connections>
@@ -157,10 +166,26 @@
                                                         <constraint firstAttribute="height" constant="200" id="p9x-bU-cJS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hours ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xw-BJ-5rr">
-                                                    <rect key="frame" x="227" y="8" width="85" height="17"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFT-8V-P3O" userLabel="Date label Inner View">
+                                                    <rect key="frame" x="216" y="14" width="93" height="17"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10409628378378379" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.40434966216216217" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hours ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xw-BJ-5rr">
+                                                    <rect key="frame" x="220" y="14" width="85" height="17"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -168,17 +193,22 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8xw-BJ-5rr" secondAttribute="trailing" constant="7" id="DTF-ni-VvM"/>
                                                 <constraint firstAttribute="bottom" secondItem="mPY-Rm-ihj" secondAttribute="bottom" id="H1q-El-NDi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8xw-BJ-5rr" secondAttribute="trailing" id="JKe-BO-NZ2"/>
+                                                <constraint firstItem="8xw-BJ-5rr" firstAttribute="centerY" secondItem="cFT-8V-P3O" secondAttribute="centerY" id="LbK-wE-iiy"/>
+                                                <constraint firstItem="cFT-8V-P3O" firstAttribute="height" secondItem="8xw-BJ-5rr" secondAttribute="height" id="Nds-rN-Eqg"/>
+                                                <constraint firstItem="cFT-8V-P3O" firstAttribute="top" secondItem="fkn-8h-cpy" secondAttribute="topMargin" constant="6" id="TGL-WZ-Kyc"/>
                                                 <constraint firstAttribute="trailing" secondItem="mPY-Rm-ihj" secondAttribute="trailing" id="V5z-vQ-TeR"/>
                                                 <constraint firstItem="mPY-Rm-ihj" firstAttribute="leading" secondItem="fkn-8h-cpy" secondAttribute="leading" id="VKV-Ud-Dtw"/>
                                                 <constraint firstItem="mPY-Rm-ihj" firstAttribute="top" secondItem="fkn-8h-cpy" secondAttribute="top" id="eRW-2t-eUh"/>
-                                                <constraint firstAttribute="topMargin" secondItem="8xw-BJ-5rr" secondAttribute="top" id="qiV-F8-cmL"/>
+                                                <constraint firstItem="8xw-BJ-5rr" firstAttribute="leading" secondItem="cFT-8V-P3O" secondAttribute="leading" constant="4" id="pwq-sj-FtI"/>
+                                                <constraint firstItem="8xw-BJ-5rr" firstAttribute="trailing" secondItem="cFT-8V-P3O" secondAttribute="trailing" constant="-4" id="t47-WS-oYS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
                                             <outlet property="dateTimeLabel" destination="8xw-BJ-5rr" id="Xfe-we-KMt"/>
+                                            <outlet property="datetimeBackgroundView" destination="cFT-8V-P3O" id="LVD-Eo-9D2"/>
                                             <outlet property="placeholderImageView" destination="mPY-Rm-ihj" id="7Uc-mg-LKZ"/>
                                         </connections>
                                     </tableViewCell>
@@ -224,7 +254,7 @@
                                         <rect key="frame" x="0.0" y="287" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hR1-fR-CWM" id="28v-Y4-2b5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQb-h8-Pm8">
@@ -252,7 +282,7 @@
                                         <rect key="frame" x="0.0" y="331" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EFO-qN-k55" id="GY9-Z3-14G">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5t-MR-qJw">

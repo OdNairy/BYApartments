@@ -18,7 +18,7 @@
 
 @implementation BYAApartment
 @dynamic onlinerID, location, apartmentAddedAt, priceUSD, photoUrl, userAddress, url, owner;
-@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment,detailsAreLoaded=_detailsAreLoaded;
+@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment,detailsAreLoaded=_detailsAreLoaded,viewsCountString=_viewsCountString;
 
 + (void)load {
     [self registerSubclass];
@@ -83,6 +83,7 @@
     [self parsePhoneNumber:detailsDocument];
     [self parsePhoneComment:detailsDocument];
     [self parseAuthorName:detailsDocument];
+    [self parseViewsCount:detailsDocument];
     self.detailsAreLoaded = YES;
     
     return self;
@@ -126,6 +127,10 @@
 
 -(instancetype)parseAuthorName:(TFHpple*)detailsDocument{
     self.authorName = [[[detailsDocument searchWithXPathQuery:@"//div[@class='apartment-summary__line apartment-summary__line_auxiliary']/div[@class='apartment-summary__sub-line']/a"] firstObject] text];
+    return self;
+}
+-(instancetype)parseViewsCount:(TFHpple*)detailsDocument{
+    self.viewsCountString = [[[detailsDocument searchWithXPathQuery:@"//span[@class='apartment-edit__views-counter']"] firstObject] text];
     return self;
 }
 

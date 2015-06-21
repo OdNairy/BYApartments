@@ -19,6 +19,7 @@
 #import "BYAApartment.h"
 #import "BYAApartmentsModel.h"
 #import "BYAGeobox.h"
+#import "DateTools.h"
 
 @interface BYAApartmentsListViewController ()<UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
@@ -122,6 +123,7 @@ const int optionsScreenPadding = 60;
     cell.addressLabel.text = apartment.userAddress;
     cell.priceLabel.text = [apartment priceString];
     cell.ownerLabel.text = [apartment ownerString];
+    cell.datetimeLabel.text = [apartment.apartmentAddedAt timeAgoSinceDate:[NSDate date] numericDates:YES numericTimes:NO];
     [cell.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:apartment.photoUrl]
                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 //                                           if (cell.backgroundImageView.image != image) {

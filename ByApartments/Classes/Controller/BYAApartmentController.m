@@ -13,7 +13,6 @@
 #import "BYAApartmentPriceCell.h"
 #import "BYAApartmentDescriptionCell.h"
 #import "BYAApartmentAddressCell.h"
-//#import "NSDate+DateTools.h"
 #import "DateTools.h"
 
 
@@ -103,8 +102,8 @@
     BYAApartmentPhotosCell* cell = (BYAApartmentPhotosCell*)cell_;
     [cell.placeholderImageView sd_setImageWithURL:[NSURL URLWithString:self.apartment.photoUrl]];
     cell.dateTimeLabel.text = [self.apartment.apartmentAddedAt timeAgoSinceNow];
-    
 }
+
 -(void)configurePriceCell:(UITableViewCell*)cell_{
     BYAApartmentPriceCell* cell = (BYAApartmentPriceCell*)cell_;
     cell.primaryPriceLabel.text = [self.usdPriceFormatter stringFromNumber:self.apartment.priceUSD];

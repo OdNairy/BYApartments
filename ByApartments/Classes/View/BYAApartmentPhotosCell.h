@@ -11,4 +11,6 @@
 @interface BYAApartmentPhotosCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
 @property (nonatomic, strong) IBOutlet UIImageView* placeholderImageView;
+@property (weak, nonatomic) IBOutlet UIView *datetimeBackgroundView;
+
 @end
