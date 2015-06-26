@@ -14,6 +14,7 @@
 #import "BYAApartmentDescriptionCell.h"
 #import "BYAApartmentAddressCell.h"
 #import "DateTools.h"
+#import "BYAApartmentOwnerCell.h"
 
 
 @interface BYAApartmentController ()
@@ -87,6 +88,9 @@
         case BYAApartmentSectionAddress:
             [self configureAddressCell:cell];
             break;
+        case BYAApartmentSectionOwner:
+            [self configureOwnerCell:cell];
+            break;
         default:
             break;
     }
@@ -95,7 +99,7 @@
 
 #pragma -
 - (NSString*)cellIdentifierForIndexPath:(NSIndexPath*)indexPath{
-    return @[@"PhotosCell",@"PriceCell",@"AddressCell", @"DescriptionCell", @"OptionsCell"][indexPath.row];
+    return @[@"PhotosCell",@"PriceCell",@"AddressCell",@"OwnerCell", @"DescriptionCell", @"OptionsCell"][indexPath.row];
 }
 
 -(void)configurePhotosCell:(UITableViewCell*)cell_{
@@ -119,6 +123,11 @@
 -(void)configureAddressCell:(UITableViewCell*)cell_{
     BYAApartmentAddressCell* cell = (BYAApartmentAddressCell*)cell_;
     cell.addressLabel.text = self.apartment.userAddress;
+}
+-(void)configureOwnerCell:(UITableViewCell*)cell_{
+    BYAApartmentOwnerCell* cell = (BYAApartmentOwnerCell*)cell_;
+    cell.ownerLabel.text = self.apartment.owner?NSLocalizedString(@"Собственник", nil):NSLocalizedString(@"Агент", nil);
+    cell.roomsCountLabel.text = self.apartment.rooms;
 }
 
 @end

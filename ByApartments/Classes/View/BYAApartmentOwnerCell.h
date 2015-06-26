@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BYAApartmentOwnerCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *roomsCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ownerLabel;
 
 @end

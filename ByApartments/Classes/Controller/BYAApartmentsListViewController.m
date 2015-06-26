@@ -40,7 +40,6 @@
 
     self.apartmentsModel = [BYAApartmentsModel sharedModel];
 
-    self.tableView.rowHeight = 180;
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshControlDidPulled) forControlEvents:(UIControlEventValueChanged)];
     [self.tableView addSubview:self.refreshControl];
