@@ -18,7 +18,7 @@
 
 @implementation BYAApartment
 @dynamic onlinerID, location, apartmentAddedAt, priceUSD, photoUrl, userAddress, url, owner;
-@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment,detailsAreLoaded=_detailsAreLoaded,viewsCountString=_viewsCountString;
+@synthesize photos=_photos, dealDescription=_dealDescription, phoneNumbers=_phoneNumbers, authorName=_authorName, loadingCurrentDetails=_loadingCurrentDetails, phoneComment=_phoneComment,detailsAreLoaded=_detailsAreLoaded,viewsCountString=_viewsCountString,includedOptions=_includedOptions;
 
 + (void)load {
     [self registerSubclass];
@@ -44,6 +44,20 @@
 
 -(NSString*)priceString{
     return [NSString stringWithFormat:@"%@ $",self.priceUSD.stringValue];
+}
+
+-(NSString * __nonnull)rooms{
+    NSString* rooms = self[@"rentType"];
+    if ([rooms isEqualToString:@"room"]) {
+        rooms = NSLocalizedString(@"Room only", @"Type of apartment - room only");
+    }else {
+        RxMatch* match = [rooms firstMatchWithDetails:RX(@"^(\\d+)")];
+        RxMatchGroup* roomsCountGroup = match.groups.lastObject;
+        NSUInteger roomsCount = roomsCountGroup.value.integerValue;
+        rooms = [NSString stringWithFormat:@"%zd-комнатная квартира",roomsCount];
+    }
+    
+    return rooms;
 }
 
 
@@ -84,6 +98,7 @@
     [self parsePhoneComment:detailsDocument];
     [self parseAuthorName:detailsDocument];
     [self parseViewsCount:detailsDocument];
+    [self parseOptions:detailsDocument];
     self.detailsAreLoaded = YES;
     
     return self;
@@ -103,6 +118,11 @@
         }
     }
     self.photos = [photos copy];
+    return self;
+}
+
+-(instancetype)parseOptions:(TFHpple*)detailsDocument{
+    
     return self;
 }
 
@@ -129,6 +149,8 @@
     self.authorName = [[[detailsDocument searchWithXPathQuery:@"//div[@class='apartment-summary__line apartment-summary__line_auxiliary']/div[@class='apartment-summary__sub-line']/a"] firstObject] text];
     return self;
 }
+
+
 -(instancetype)parseViewsCount:(TFHpple*)detailsDocument{
     self.viewsCountString = [[[detailsDocument searchWithXPathQuery:@"//span[@class='apartment-edit__views-counter']"] firstObject] text];
     return self;

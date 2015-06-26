@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <PromiseKit.h>
 
+@class BYAApartmentOption;
+
 @interface BYAApartment : PFObject<PFSubclassing>
 @property (nonatomic, assign) NSInteger onlinerID;
 @property (nonatomic, strong, nonnull) NSDate* apartmentAddedAt;
@@ -18,6 +20,7 @@
 @property (nonatomic, strong, nonnull) NSString* photoUrl;
 @property (nonatomic, strong, nullable) NSNumber* priceUSD;
 @property (nonatomic, strong, nonnull) NSURL* url;
+@property (nonatomic, strong,readonly, nonnull) NSString* rooms;
 @property (nonatomic, assign) BOOL owner;
 
 @property (nonatomic, strong, nullable) NSArray<NSURL*>* photos;
@@ -26,7 +29,7 @@
 @property (nonatomic, strong, nullable) NSString* phoneComment;
 @property (nonatomic, strong, nullable) NSString* authorName;
 @property (nonatomic, strong, nullable) NSString* viewsCountString;
-
+@property (nonatomic, strong, nonnull) NSOrderedSet<BYAApartmentOption*>* includedOptions;
 
 @property (nonatomic, assign, getter=isLoadingCurrentDetails) BOOL loadingCurrentDetails;
 @property (nonatomic, assign, getter=isDetailsAreLoaded) BOOL detailsAreLoaded;
