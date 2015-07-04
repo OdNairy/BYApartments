@@ -28,12 +28,16 @@
     [super viewDidLoad];
     self.tableView.estimatedRowHeight = 60;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.apartment.loadDetails.then(^(BYAApartment* apartment){
-        if (!self.viewIsAppearing) {
+    PMKPromise* loadPromise = self.apartment.loadDetails;
+    if (loadPromise) {
+        loadPromise.then(^(BYAApartment* apartment){
+            if (!self.viewIsAppearing) {
+                [self.tableView reloadData];
+            }
             [self.tableView reloadData];
-        }
-        [self.tableView reloadData];
-    });
+        });
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

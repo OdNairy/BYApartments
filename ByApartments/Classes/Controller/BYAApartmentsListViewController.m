@@ -10,6 +10,7 @@
 #import <PromiseKit.h>
 #import <Parse+PromiseKit.h>
 #import "UIImageView+WebCache.h"
+#import <Masonry.h>
 
 #import "BYAApartmentsListViewController.h"
 #import "BYAApartmentCell.h"
@@ -29,14 +30,18 @@
 @property (nonatomic, strong) NSArray* apartments;
 
 @property (nonatomic, assign) BOOL optionsScreenPresented;
+
 @property (nonatomic, strong) BYASidebarController* sidebarController;
+@property (nonatomic, strong) MASConstraint* sideConstraint;
+@property (nonatomic, assign) BOOL failedPanTouch;
+
+@property (nonatomic, strong) UITapGestureRecognizer* tapGesture;
 @end
 
 @implementation BYAApartmentsListViewController
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    // https://r.onliner.by/ak/?bounds[lb][lat]=[lb][long]=&bounds[rt][lat]=&bounds[rt][long]=&page=1&order=created_at:desc
 
     self.apartmentsModel = [BYAApartmentsModel sharedModel];
 
@@ -48,6 +53,36 @@
     [self updateApartments].then(^(){
         [self.refreshControl endRefreshing];
     });
+    
+    [self configureSidebarController];
+    UIPanGestureRecognizer* edgePan = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                                                                  action:@selector(panGesture:)];
+    [self.navigationController.view addGestureRecognizer:edgePan];
+    
+    
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDidTapped:)];
+    self.tapGesture.enabled = NO;
+    [self.navigationController.view addGestureRecognizer:self.tapGesture];
+}
+
+-(void)configureSidebarController{
+    self.sidebarController = [self.storyboard instantiateViewControllerWithIdentifier:@"Sidebar"];
+    self.sidebarController.view.backgroundColor = [UIColor redColor];
+    
+    [self addChildViewController:self.sidebarController];
+    [self.view addSubview:self.sidebarController.view];
+    
+    [self.sidebarController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.equalTo(@([self sideBarWidth]));
+        make.height.equalTo(self.view);
+        make.top.equalTo(self.view);
+        make.left.equalTo(self.view.mas_left).with.offset(-self.view.bounds.size.width);
+    }];
+}
+
+-(CGFloat)sideBarWidth{
+    return self.view.bounds.size.width*7/8;
 }
 
 #pragma mark - User Actions
@@ -81,30 +116,95 @@
     });
 }
 
+-(IBAction)tapGestureDidTapped:(UITapGestureRecognizer*)tapGesture{
+    [UIView animateWithDuration:2 animations:^{
+        [self.sidebarController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+            [self.sidebarController.view layoutIfNeeded];
+            [self.view layoutIfNeeded];
+            make.left.equalTo(self.view.mas_left).with.offset(-[self sideBarWidth]);
+            self.optionsScreenPresented = NO;;
+        }];
+    }];
+}
+
+-(IBAction)panGesture:(UIPanGestureRecognizer*)panGestureRecognizer{
+    switch (panGestureRecognizer.state) {
+        case UIGestureRecognizerStateBegan:{
+            CGPoint position = [panGestureRecognizer locationInView:panGestureRecognizer.view];
+            if (position.x > 25 || self.optionsScreenPresented) {
+                panGestureRecognizer.enabled = NO;
+                panGestureRecognizer.enabled = YES;
+                self.failedPanTouch = YES;
+                return;
+            }
+            
+            // continue to Changed state
+        }
+            
+        case UIGestureRecognizerStateChanged:{
+            CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
+            [self.sidebarController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+                CGFloat offset = (translation.x-[self sideBarWidth]) <= 0 ? (translation.x-[self sideBarWidth]) : 0;
+                make.left.equalTo(self.view.mas_left).with.offset(offset);
+            }];
+        }
+            
+            break;
+        case UIGestureRecognizerStateEnded:{
+            CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view];
+            
+            CGFloat offset = -[self sideBarWidth];
+            CGFloat sideFraction = translation.x / [self sideBarWidth];
+            BOOL optionsAreClosed = YES;
+            if (sideFraction >= .5) {
+                offset = 0;
+                optionsAreClosed = NO;
+            }
+            
+            [UIView animateWithDuration:2 animations:^{
+                [self.sidebarController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+                    [self.sidebarController.view layoutIfNeeded];
+                    make.left.equalTo(self.view.mas_left).with.offset(offset);
+                    self.optionsScreenPresented = !optionsAreClosed;
+                }];
+            }];
+            self.failedPanTouch = NO;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+
+#pragma mark - Setters and Getters
+-(void)setOptionsScreenPresented:(BOOL)optionsScreenPresented{
+    _optionsScreenPresented = optionsScreenPresented;
+    self.tapGesture.enabled = optionsScreenPresented;
+}
+
 #pragma mark - Options Screen
 const int optionsScreenPadding = 60;
 -(void)presentOptionsScreen:(BOOL)animated{
-    self.sidebarController = [self.storyboard instantiateViewControllerWithIdentifier:@"Sidebar"];
-    self.sidebarController.view.frame = CGRectMake(0, 0, self.sidebarController.view.bounds.size.width - optionsScreenPadding, self.sidebarController.view.bounds.size.height);
-    [self addChildViewController:self.sidebarController];
-
-    self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, -self.sidebarController.view.bounds.size.width, 0);
-    [self.view addSubview:self.sidebarController.view];
-
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:.3 animations:^{
-        self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, self.sidebarController.view.bounds.size.width, 0);
+        [self.sideConstraint uninstall];
+        [self.sidebarController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left);
+        }];
+        [self.sidebarController.view layoutIfNeeded];
         self.optionsScreenPresented = YES;
     }];
 }
 
 -(void)hideOptionsScreen:(BOOL)animated{
     [UIView animateWithDuration:.3 animations:^{
-        self.sidebarController.view.frame = CGRectOffset(self.sidebarController.view.frame, -self.sidebarController.view.bounds.size.width, 0);
+        [self.sidebarController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left).with.offset(-self.view.bounds.size.width);
+        }];
+        [self.sidebarController.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        [self.sidebarController.view removeFromSuperview];
-        [self.sidebarController removeFromParentViewController];
-        self.sidebarController = nil;
 
         self.optionsScreenPresented = NO;
     }];
@@ -136,6 +236,12 @@ const int optionsScreenPadding = 60;
     return cell;
 }
 
+-(BOOL)shouldPerformSegueWithIdentifier:(nonnull NSString *)identifier sender:(nullable id)sender{
+    if (self.failedPanTouch) {
+        return NO;
+    }
+    return YES;
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"Apartment"]) {

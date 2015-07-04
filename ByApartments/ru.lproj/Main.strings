@@ -1,0 +1,45 @@
+
+/* Class = "UINavigationItem"; title = "Apartments"; ObjectID = "2GD-gT-aJn"; */
+"2GD-gT-aJn.title" = "Apartments";
+
+/* Class = "UILabel"; text = "12 hours ago"; ObjectID = "8xw-BJ-5rr"; */
+"8xw-BJ-5rr.text" = "12 hours ago";
+
+/* Class = "UISegmentedControl"; 94j-r0-vU9.segmentTitles[0] = "Собственник"; ObjectID = "94j-r0-vU9"; */
+"94j-r0-vU9.segmentTitles[0]" = "Собственник";
+
+/* Class = "UISegmentedControl"; 94j-r0-vU9.segmentTitles[1] = "Агент"; ObjectID = "94j-r0-vU9"; */
+"94j-r0-vU9.segmentTitles[1]" = "Агент";
+
+/* Class = "UISegmentedControl"; 94j-r0-vU9.segmentTitles[2] = "Не важно"; ObjectID = "94j-r0-vU9"; */
+"94j-r0-vU9.segmentTitles[2]" = "Не важно";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FSQ-1V-64w"; */
+"FSQ-1V-64w.text" = "Label";
+
+/* Class = "UILabel"; text = "Description Label"; ObjectID = "J5t-MR-qJw"; */
+"J5t-MR-qJw.text" = "Description Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JTY-ye-0hM"; */
+"JTY-ye-0hM.text" = "Label";
+
+/* Class = "UILabel"; text = "Address label"; ObjectID = "TQb-h8-Pm8"; */
+"TQb-h8-Pm8.text" = "Address label";
+
+/* Class = "UIButton"; normalTitle = "Применить"; ObjectID = "ToG-jw-p19"; */
+"ToG-jw-p19.normalTitle" = "Применить";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tuo-6Z-rc7"; */
+"Tuo-6Z-rc7.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Urr-lu-lUh"; */
+"Urr-lu-lUh.text" = "Label";
+
+/* Class = "UILabel"; text = "350 $"; ObjectID = "Xbq-vi-QoX"; */
+"Xbq-vi-QoX.text" = "350 $";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YTT-Pc-F2O"; */
+"YTT-Pc-F2O.text" = "Label";
+
+/* Class = "UILabel"; text = "12 hours ago"; ObjectID = "mWg-Gd-hPZ"; */
+"mWg-Gd-hPZ.text" = "12 hours ago";

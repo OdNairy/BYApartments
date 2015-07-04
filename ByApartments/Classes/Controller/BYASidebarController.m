@@ -23,11 +23,11 @@
     self.priceRangeSlider.numberFormatterOverride = [[BYAPriceFormatter alloc] init];
     [self.view addSubview:self.priceRangeSlider];
 
-    [self.priceRangeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.ownerSegmentControl);
-        make.top.equalTo(self.ownerSegmentControl.mas_bottom).with.offset(20);
-        make.height.equalTo(@44);
-    }];
+//    [self.priceRangeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.and.right.equalTo(self.ownerSegmentControl);
+//        make.top.equalTo(self.ownerSegmentControl.mas_bottom).with.offset(20);
+//        make.height.equalTo(@44);
+//    }];
 
     self.priceRangeSlider.minValue = 1;
     self.priceRangeSlider.maxValue = 40;
