@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        NSLog("AppDelegate class: %@", NSStringFromClass( PFCloud.self))
+
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("0zvc4br25b2ggshPCXN3BolmqKIcvbx70ZdgwrqL",
+            clientKey: "XRhg2bdSlpQnpEA6ugOtJLheETzOP46LdWBTHcHf")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+//            print(Apartment.findAll())
+//            print(Apartment.query()!.findObjects()!)
+            
+        }
         return true
     }
 
